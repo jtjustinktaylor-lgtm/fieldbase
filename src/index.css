@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Safe area insets for notch devices */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.mb-safe {
+  margin-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 2px;
+}
+
+/* Status badge colors */
+@layer components {
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-draft {
+    @apply bg-slate-600 text-slate-200;
+  }
+  .badge-sent {
+    @apply bg-blue-900 text-blue-200;
+  }
+  .badge-accepted {
+    @apply bg-emerald-900 text-emerald-200;
+  }
+  .badge-declined {
+    @apply bg-red-900 text-red-200;
+  }
+  .badge-expired {
+    @apply bg-amber-900 text-amber-200;
+  }
+  .badge-scheduled {
+    @apply bg-blue-900 text-blue-200;
+  }
+  .badge-in_progress {
+    @apply bg-amber-900 text-amber-200;
+  }
+  .badge-completed {
+    @apply bg-emerald-900 text-emerald-200;
+  }
+  .badge-cancelled {
+    @apply bg-red-900 text-red-200;
+  }
+}
